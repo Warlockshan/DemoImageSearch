@@ -25,18 +25,6 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 scope.launch {
                     var wordDao = database.wordDao()
 
-                    // Delete all content here.
-                    //wordDao.deleteAll()
-
-                    // Add sample words.
-                   /* var word = Word(0,"adasd","dsasda")
-                    wordDao.insert(word)
-                    word = Word(0,"cczsd","dfdsfsd")
-                    wordDao.insert(word)
-
-                    // TODO: Add your own words!
-                    word = Word(0,"TODO!","dfdf")
-                    wordDao.insert(word)*/
                 }
             }
         }
