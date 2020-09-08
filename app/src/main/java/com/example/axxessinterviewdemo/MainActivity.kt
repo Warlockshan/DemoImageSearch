@@ -80,11 +80,17 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        button.setOnClickListener {  val word = Word(0,imageIDs,editWordView.text.toString())
-            wordViewModel.insert(word)
-            et_comment.text.clear()
+        button.setOnClickListener {
+            if (editWordView.length()>0){
+                val word = Word(0,imageIDs,editWordView.text.toString())
+                wordViewModel.insert(word)
+                et_comment.text.clear()
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(et_comment.windowToken, 0)
+            }else{
+                editWordView.setError("Please write comments!")
+            }
+
 
         }
 
